@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="prose-page shell">
+  <p class="eyebrow">arte.dog</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Lastmod }}<p class="page-meta">Ostatnia aktualizacja: {{ .Format "02.01.2006" }}</p>{{ end }}
+  <div class="prose">{{ .Content }}</div>
+  <a class="text-link" href="{{ site.Home.RelPermalink }}">← Wróć na stronę główną</a>
+</article>
+{{ end }}
+

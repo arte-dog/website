@@ -1,0 +1,16 @@
+<header class="site-header" data-header>
+  <div class="shell nav-wrap">
+    <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="arte.dog — strona główna">
+      <img src="{{ "images/logo-arte-dog.svg" | relURL }}" width="204" height="64" alt="arte.dog">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle>
+      <span class="sr-only">Otwórz menu</span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Główna nawigacja" data-nav>
+      {{ range site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+      <a class="nav-cta" href="mailto:{{ site.Params.email }}">Napisz do mnie</a>
+    </nav>
+  </div>
+</header>
+

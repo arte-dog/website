@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 820" role="img" aria-labelledby="t d">
+  <title id="t">Miejsce na zdjęcie psa</title><desc id="d">Artystyczny szkic sheltie na spokojnym tle.</desc>
+  <rect width="700" height="820" fill="#ead6c9"/>
+  <circle cx="120" cy="145" r="170" fill="#d6ad61" opacity=".42"/>
+  <path d="M0 647c112-68 232-88 361-58 122 28 235 11 339-53v284H0Z" fill="#dce5d9"/>
+  <g transform="translate(82 82)" fill="none" stroke="#173f39" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="6" d="M74 464c27-57 73-97 137-119-25-48-18-100 19-157 33 37 58 72 73 105 22-15 48-24 79-28 25-3 50 1 75 13 15-36 38-71 70-105 20 64 19 117-3 159 45 42 62 93 50 153-44 57-109 85-196 85-126 0-228-35-304-106Z"/>
+    <path stroke-width="4" d="M219 349c38 17 66 43 83 77M467 332c-31 26-51 57-59 94M312 440c29 25 64 37 104 37 37 0 68-12 94-35M353 410c24-15 49-15 75 0-3 28-16 42-38 42-22 0-34-14-37-42Z"/>
+    <path stroke-width="4" d="M287 381c18-12 37-12 57 0M433 380c18-12 37-12 57 0"/>
+    <path stroke="#bd6b51" stroke-width="7" d="M286 535c64 32 131 33 202 3"/>
+  </g>
+  <text x="350" y="753" fill="#173f39" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3" text-anchor="middle">ZDJĘCIE PSA DO UZUPEŁNIENIA</text>
+</svg>
+

@@ -1,0 +1,183 @@
+{{ define "main" }}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-wash hero-wash-one" aria-hidden="true"></div>
+  <div class="hero-wash hero-wash-two" aria-hidden="true"></div>
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Magdalena Greś · arte.dog</p>
+      <h1 id="hero-title">Spotkania, gdzie człowiek, pies i sztuka <em>tworzą coś wartościowego</em></h1>
+      <p class="hero-lead">Staram się tworzyć spokojną przestrzeń do budowania relacji, wyrażania emocji, czy tego co głęboko ukryte i uczenia się siebie z moim psim towarzyszem za pomocą kreatywności.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#o-mnie">Poznaj mnie <span aria-hidden="true">↘</span></a>
+        <a class="text-link" href="#obszary">Zobacz obszary pracy <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="role-list" aria-label="Obszary specjalizacji">
+        <li>dogoterapia</li>
+        <li>arteterapia</li>
+        <li>behawiorystyka</li>
+        <li>trening psów</li>
+      </ul>
+    </div>
+    <figure class="hero-visual">
+      <div class="tape tape-top" aria-hidden="true"></div>
+      <div class="hero-photo-frame">
+        {{ partial "responsive-photo.html" (dict
+          "src" "images/photo-hero-meadow.jpg"
+          "alt" "Magdalena Greś z owczarkiem szetlandzkim Joko na kwietnej łące"
+          "sizes" "(max-width: 900px) 88vw, 500px"
+          "autoOrient" true) }}
+      </div>
+    <!--  <figcaption>Razem, w swoim tempie.</figcaption> !-->
+      <svg class="hero-doodle" viewBox="0 0 180 90" aria-hidden="true"><path d="M7 70c38-9 49-59 84-49 21 6 21 39 1 41-17 2-14-28 10-37 28-11 55 8 70 39"/></svg>
+    </figure>
+  </div>
+</section>
+
+<section class="intro section" id="o-mnie" aria-labelledby="about-title">
+  <div class="shell intro-grid">
+    <div class="section-marker" aria-hidden="true"><span></span></div>
+    <div class="intro-heading">
+      <p class="eyebrow">O mnie</p>
+      <h2 id="about-title">Relacja zaczyna się od <em>uważności</em></h2>
+    </div>
+    <div class="intro-copy">
+      <p class="lead-serif">Nazywam się <em>Magdalena Greś</em>. Działam poprzez autorskie zajęcia dogoterapii i arteterapii.</p>
+      <p>Moim celem są zajęcia bezpieczne, rozwijające, kreatywne i bez presji. Relacje z psem opieram na obserwacji i komunikacji — czyli poczuciu bezpieczeństwa i szacunku dla granic. Sztuka, którą tworzycie na moich zajęciach nie musi być „ładna”, a mój pies nie zawsze jest „idealny”, bo liczy się wspólny czas i spotkanie.</p>
+      <p class="hand-note"><span aria-hidden="true">✤</span> Spokojnie, bez presji, autentycznie, po prostu razem.</p>
+    </div>
+  </div>
+</section>
+
+<section class="portrait-break section-tight" aria-label="Portret Magdaleny">
+  <div class="shell portrait-grid">
+    <figure class="portrait-frame">
+      <div class="portrait-photo-frame">
+        {{ partial "responsive-photo.html" (dict
+          "src" "images/photo-portrait-beach.png"
+          "alt" "Magdalena Greś na plaży o zachodzie słońca"
+          "sizes" "(max-width: 900px) 92vw, 650px") }}
+      </div>
+     <figcaption>To ja!</figcaption>
+    </figure>
+
+    <div class="portrait-story">
+      <p class="eyebrow">Kilka słów o mnie</p>
+      <p class="lead-serif">Z wykształcenia i zamiłowania jestem pedagożką specjalną, arteterapeutką i artystką. Łączę te obszary z pracą ze zwierzętami — jako dogoterapeutka, trenerka oraz behawiorystka psów i kotów.</p>
+      <div class="portrait-story-copy">
+        <p>Od ponad pięciu lat pracuję z ludźmi i zwierzętami. Specjalizuję się w pracy z osobami neuroatypowymi — między innymi w spektrum autyzmu, z ADHD i AuDHD. Sama jestem w spektrum, dlatego część tego świata znam również od środka. Mam doświadczenie w pracy z dziećmi zarówno indywidualnie, jak i w grupach.</p>
+        <p>Uwielbiam wszystko, co rozwija kreatywność: maluję, wyszywam, fotografuję i filcuję. Równie mocno lubię pracę z ludźmi, jak ze zwierzętami. Odpoczywam w lesie, nad morzem oraz wtedy, gdy mogę nauczyć się czegoś nowego.</p>
+        <p>Prywatnie jestem żoną fantastycznego męża, który z anielską cierpliwością przyjmuje każdy mój szalony pomysł, a także opiekunką sheltie Kumpela Joko i dostojnej kociej damy Lucynki.</p>
+      </div>
+      {{ with site.GetPage "/kwalifikacje" }}<a class="text-link portrait-story-link" href="{{ .RelPermalink }}">Zobacz moje kwalifikacje <span aria-hidden="true">→</span></a>{{ end }}
+    </div>
+	
+  </div>
+</section>
+
+<section class="areas section" id="obszary" aria-labelledby="areas-title">
+  <div class="shell">
+    <div class="section-topline">
+      <div>
+        <p class="eyebrow">Obszary mojej pracy</p>
+        <h2 id="areas-title">Co łączę w swojej pracy?<br><em>Czego potrzebujesz?</em></h2>
+      </div>
+      <p>Obszary z których czerpię - dobierając sposób pracy do człowieka, psa i sytuacji.</p>
+    </div>
+    <div class="area-list">
+      <article class="area-card">
+        <div class="area-icon" aria-hidden="true">{{ partial "icon-paw.html" . }}</div>
+        <h3>Dogoterapia oraz <br> kynoedukacja</h3>
+        <p>Uważny, edukacyjno-terapeutyczny kontakt z odpowiednio przygotowywanym psem, który wspiera zaangażowanie, motywację, uczy relacji i komunikacji na płaszczyźnie człowiek-pies na bezpiecznych zasadach zarówno dla uczestników, jak i dla psa.</p>
+      </article>
+      <article class="area-card">
+        <div class="area-icon" aria-hidden="true">{{ partial "icon-brush.html" . }}</div>
+        <h3>Arteterapia</h3>
+        <p>Twórczy proces wspierający dobrostan psychiczny i pomagający wyrazić to, co trudno nazwać lub pozostaje głęboko ukryte — bez oceniania i presji. Korzystamy z różnorodnych technik, struktur i barw, tworząc coś własnego z dostępnych materiałów.</p>
+      </article>
+      <article class="area-card">
+        <div class="area-icon" aria-hidden="true">{{ partial "icon-dialogue.html" . }}</div>
+        <h3>Behawiorystyka</h3>
+        <p>Uważne odczytywanie komunikatów psa i szukanie przyczyn jego zachowania. Wspólnie z opiekunem buduję świadomość psich sygnałów, dobieram realne rozwiązania i planuję pracę opartą na pozytywnych metodach oraz czytelnej komunikacji.</p>
+      </article>
+      <article class="area-card">
+        <div class="area-icon" aria-hidden="true">{{ partial "icon-lead.html" . }}</div>
+        <h3>Trening psów</h3>
+        <p>Regularna nauka psa oparta na współpracy, czytelnej komunikacji i metodach, które dbają o emocje po obu stronach smyczy. Plan pracy umożliwiający cel, który chcemy osiągnąć.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="approach section" id="podejscie" aria-labelledby="approach-title">
+  <div class="approach-splotch" aria-hidden="true"></div>
+  <div class="shell approach-grid">
+    <div class="approach-photo">
+      {{ partial "responsive-photo.html" (dict
+        "src" "images/photo-sheltie-original.jpg"
+        "alt" "Portret owczarka szetlandzkiego w naturalnym otoczeniu"
+        "sizes" "(max-width: 900px) 94vw, 540px"
+        "autoOrient" true) }}
+      <span class="photo-label">Kumpel Joko</span>
+    </div>
+    <div class="approach-copy">
+      <p class="eyebrow">Moje podejście</p>
+      <h2 id="approach-title">Kreatywność i zabawa</h2>
+      <p class="lead-serif">Na zajęciach stawiam na jasną komunikację, łącząc zaplanowane działania ze spontanicznością. Tworzę przyjazną, bezpieczną przestrzeń – szanuję emocje uczestników i granice psa, pracując na wyznaczonych strefach i odpowiednim dystansie.</p>
+      <ol class="principles">
+        <li><span>01</span><div><h3>Bezpieczeństwo i podstawy</h3><p>Najpierw ustalamy zasady i wprowadzam uczestników w świat psiego ABC, ustalamy cel naszego spotkania.</p></div></li>
+        <li><span>02</span><div><h3>Dobieram, nie narzucam</h3><p>Wszystko dostosowuję pod wiek i możliwości uczestnika, biorąc pod uwagę niepełnosprawności, specjalne dostosowania oraz przedstawiam plan i staram się motywować do działania - natomiast nigdy nie zmuszam do pracy.</p></div></li>
+        <li><span>03</span><div><h3>Dbam o obie strony</h3><p>Dbam o to, aby każdy czuł się dobrze podczas zajęć, a granice człowieka i dobrostan psa pozostawały bezwzględnie szanowane.</p></div></li>
+        <li><span>04</span><div><h3>Rozwój i kreatywność</h3><p>Korzystam z autorskich, sprawdzonych metod oraz dobrej jakości narzędzi. Zachęcam do spontanicznego, otwartego działania artystycznego, bo wierzę, że w każdym jest twórcza część, która chce się wyrazić.</p></div></li>
+        <li><span>05</span><div><h3>Liczy się proces, nie ideał</h3><p>Zrobione jest lepsze niż idealne. Ja wciąż się uczę i popełniam błędy, Joko — mimo naszej wspólnej pracy — może mieć gorszy dzień, a uczestnik może pierwszy raz trzymać pędzel albo obawiać się nowego doświadczenia. Najważniejszy jest proces, w którym wszyscy możemy się rozwijać.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="welfare section-tight" aria-labelledby="welfare-title">
+  <div class="shell welfare-inner">
+    <div class="welfare-mark" aria-hidden="true">{{ partial "icon-heart-paw.html" . }}</div>
+    <div>
+      <p class="eyebrow">Ważne</p>
+      <h2 id="welfare-title">Dobrostan psa to podstawa</h2>
+    </div>
+    <p>Obecność psa jest kluczowa w procesie terapeutycznym, dlatego jego granice i komfort są bezwzględnie szanowane. Każde spotkanie uwzględnia jego sygnały, potrzebę odpoczynku i gotowość do kontaktu. Dobrostan zwierzęcia zawsze stawiam na równi z realizacją celów zajęć.</p>
+  </div>
+</section>
+
+<section class="contact section" id="kontakt" aria-labelledby="contact-title">
+  <div class="shell contact-card">
+    <div class="contact-doodle" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow">Zostańmy w kontakcie</p>
+      <h2 id="contact-title">Dobre spotkania zaczynają się od <em>rozmowy</em></h2>
+      <p>Arte Dog jest właśnie w trakcie nabierania kształtu. Jeśli chcesz mnie poznać, zaprosić do współpracy albo porozmawiać o wspólnym pomyśle — napisz.</p>
+      <a class="button button-light" href="mailto:{{ site.Params.email }}">{{ site.Params.email }} <span aria-hidden="true">↗</span></a>
+      {{ if or site.Params.phone site.Params.locality site.Params.address }}
+        <address class="contact-details">
+          {{ with site.Params.phone }}
+            <div>
+              <span class="contact-detail-label">Telefon</span>
+              <a href="tel:{{ replaceRE `[^0-9+]` "" . }}">{{ . }}</a>
+            </div>
+          {{ end }}
+          {{ with site.Params.locality }}
+            <div>
+              <span class="contact-detail-label">Miejscowość</span>
+              <span>{{ . }}</span>
+            </div>
+          {{ end }}
+          {{ with site.Params.address }}
+            <div>
+              <span class="contact-detail-label">Adres</span>
+              <span>{{ . }}{{ with site.Params.postalCode }}, {{ . }}{{ end }}</span>
+            </div>
+          {{ end }}
+        </address>
+      {{ end }}
+      <p class="contact-note">Odpowiadam osobiście, zwykle w ciągu kilku dni roboczych.</p>
+    </div>
+    <div class="contact-signature" aria-label="Podpis">Magdalena</div>
+  </div>
+</section>
+{{ end }}

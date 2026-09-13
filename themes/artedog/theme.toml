@@ -1,0 +1,11 @@
+name = "Arte Dog"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "Autorski, dostępny motyw Hugo dla marki osobistej arte.dog."
+homepage = "https://arte.dog/"
+tags = ["responsive", "accessible", "personal", "portfolio", "landing-page"]
+features = ["seo", "schema.org", "responsive-images", "reduced-motion"]
+
+[author]
+  name = "arte.dog"
+

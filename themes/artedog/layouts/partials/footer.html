@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <img class="footer-logo" src="{{ "images/logo-arte-dog.svg" | relURL }}" width="178" height="56" alt="arte.dog">
+      <p>Uważna przestrzeń spotkania człowieka, psa i sztuki.</p>
+    </div>
+    <div class="footer-links" aria-label="Informacje">
+      <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+      {{ with site.Params.phone }}<a href="tel:{{ replaceRE `[^0-9+]` "" . }}">{{ . }}</a>{{ end }}
+      {{ with site.GetPage "/kwalifikacje" }}<a href="{{ .RelPermalink }}">Kwalifikacje</a>{{ end }}
+      <a href="{{ "polityka-prywatnosci/" | relURL }}">Polityka prywatności</a>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© {{ now.Year }} Magdalena Greś</span>
+    <span>Dobrostan psa jest zawsze częścią procesu.</span>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="t d">
+  <title id="t">Miejsce na portret Magdaleny</title><desc id="d">Abstrakcyjna kompozycja z liniowym portretem.</desc>
+  <rect width="900" height="700" fill="#a8bec1"/>
+  <path d="M0 510c180-120 332-138 457-56 148 97 296 86 443-35v281H0Z" fill="#173f39" opacity=".22"/>
+  <path d="M0 0h304c-47 106-52 207-15 301C198 270 102 275 0 317Z" fill="#d6ad61" opacity=".5"/>
+  <g fill="none" stroke="#173f39" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="5" d="M429 456c-22-59-28-124-18-195 9-69 54-111 117-109 69 2 111 50 108 120-3 75-16 137-41 186"/>
+    <path stroke-width="4" d="M433 250c50 24 105 25 166 2M472 303c12-7 26-7 39 0M548 303c13-7 27-7 40 0M501 367c25 18 50 18 75 0"/>
+    <path stroke-width="5" d="M348 605c20-98 90-151 211-151 119 1 194 52 225 151"/>
+    <path stroke="#bd6b51" stroke-width="6" d="M479 401c32 21 67 21 103 0"/>
+  </g>
+  <text x="72" y="615" fill="#f6f1e7" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3">PORTRET DO UZUPEŁNIENIA</text>
+</svg>
+

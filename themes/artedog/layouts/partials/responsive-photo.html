@@ -1,0 +1,20 @@
+{{- $source := resources.Get .src -}}
+{{- if not $source -}}
+  {{- errorf "Nie znaleziono obrazu %q" .src -}}
+{{- end -}}
+{{- with .autoOrient -}}
+  {{- $source = $source.Filter images.AutoOrient -}}
+{{- end -}}
+{{- $smallSpec := .small | default "700x webp q86" -}}
+{{- $largeSpec := .large | default "1400x webp q90" -}}
+{{- $small := $source.Resize $smallSpec -}}
+{{- $large := $source.Resize $largeSpec -}}
+<img
+  src="{{ $large.RelPermalink }}"
+  srcset="{{ $small.RelPermalink }} {{ $small.Width }}w, {{ $large.RelPermalink }} {{ $large.Width }}w"
+  sizes="{{ .sizes | default "(max-width: 900px) 88vw, 500px" }}"
+  width="{{ $large.Width }}"
+  height="{{ $large.Height }}"
+  alt="{{ .alt }}"
+  decoding="async"
+  {{ with .loading }}loading="{{ . }}"{{ end }}>

@@ -1,0 +1,47 @@
+{{ $page := .page }}
+<div class="qualification-list" aria-label="{{ .label }}">
+  {{ range $index, $qualification := .items }}
+    <article class="qualification-card">
+      <div class="qualification-number" aria-hidden="true">{{ printf "%02d" (add $index 1) }}</div>
+      <div class="qualification-card-main{{ if not $qualification.image }} qualification-card-main--text{{ end }}">
+        {{ with $qualification.image }}
+          {{ $certificate := $page.Resources.GetMatch . }}
+          {{ with $certificate }}
+            {{ $small := .Resize "360x webp q84" }}
+            {{ $large := .Resize "736x webp q88" }}
+            <figure class="certificate-visual{{ if $qualification.placeholder }} is-placeholder{{ end }}">
+              <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer" aria-label="Otwórz pełny obraz dokumentu w nowej karcie">
+                <img
+                  src="{{ $large.RelPermalink }}"
+                  srcset="{{ $small.RelPermalink }} {{ $small.Width }}w, {{ $large.RelPermalink }} {{ $large.Width }}w"
+                  sizes="(max-width: 620px) 82vw, 280px"
+                  width="{{ $large.Width }}"
+                  height="{{ $large.Height }}"
+                  alt="{{ $qualification.image_alt | default (printf "Dokument: %s" $qualification.title) }}"
+                  loading="lazy"
+                  decoding="async">
+              </a>
+              {{ if $qualification.placeholder }}<figcaption>Przykład · do podmiany</figcaption>{{ end }}
+            </figure>
+          {{ end }}
+        {{ end }}
+        <div class="qualification-content">
+          {{ with $qualification.category }}<p class="eyebrow">{{ . }}</p>{{ end }}
+          <h3>{{ $qualification.title }}</h3>
+          <dl class="qualification-meta">
+            {{ with $qualification.issuer }}
+              <div><dt>Organizator</dt><dd>{{ . }}</dd></div>
+            {{ end }}
+            {{ with $qualification.date }}
+              <div><dt>Ukończenie</dt><dd>{{ . }}</dd></div>
+            {{ end }}
+          </dl>
+          {{ with $qualification.description }}<p>{{ . }}</p>{{ end }}
+          {{ with $qualification.verify_url }}
+            <a class="text-link" href="{{ . }}" rel="noopener noreferrer">Sprawdź poświadczenie <span aria-hidden="true">↗</span></a>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+  {{ end }}
+</div>

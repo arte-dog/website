@@ -1,0 +1,34 @@
+{{- $description := .Description | default site.Params.description -}}
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Params.brand) -}}
+{{- $canonical := .Permalink -}}
+{{- $ogImage := site.Params.ogImage | absURL -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ site.Params.owner }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="{{ site.Params.themeColor }}">
+<link rel="canonical" href="{{ $canonical }}">
+<link rel="icon" href="{{ "images/favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $canonical }}">
+<meta property="og:site_name" content="{{ site.Params.brand }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:secure_url" content="{{ $ogImage }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="arte.dog — dogoterapia i arteterapia w Białymstoku">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+<meta name="twitter:image:alt" content="arte.dog — dogoterapia i arteterapia w Białymstoku">
+{{ partial "schema.html" . }}
+{{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">

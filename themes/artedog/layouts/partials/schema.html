@@ -1,0 +1,52 @@
+{{ if .IsHome }}
+{{- $personPhoto := resources.Get "images/photo-portrait-beach.png" -}}
+{{- $personPhoto = $personPhoto.Resize "1200x webp q90" -}}
+{{- $areaServed := dict "@type" "Country" "name" site.Params.serviceArea -}}
+{{- with site.Params.locality -}}
+  {{- $areaServed = dict "@type" "City" "name" . -}}
+{{- end -}}
+{{- $business := dict
+  "@type" "ProfessionalService"
+  "@id" (printf "%s#business" site.BaseURL)
+  "name" site.Params.brand
+  "url" site.BaseURL
+  "logo" ("images/logo-arte-dog.svg" | absURL)
+  "image" (site.Params.ogImage | absURL)
+  "description" site.Params.description
+  "email" (printf "mailto:%s" site.Params.email)
+  "areaServed" $areaServed
+  "founder" (dict "@id" (printf "%s#magdalena-gres" site.BaseURL))
+  "serviceType" (slice "Dogoterapia" "Arteterapia" "Konsultacje behawioralne" "Trening psów")
+-}}
+{{- with site.Params.phone -}}
+  {{- $business = merge $business (dict "telephone" .) -}}
+{{- end -}}
+{{- if or site.Params.locality site.Params.address site.Params.postalCode -}}
+  {{- $postalAddress := dict "@type" "PostalAddress" "addressCountry" "PL" -}}
+  {{- with site.Params.locality }}{{ $postalAddress = merge $postalAddress (dict "addressLocality" .) }}{{ end -}}
+  {{- with site.Params.address }}{{ $postalAddress = merge $postalAddress (dict "streetAddress" .) }}{{ end -}}
+  {{- with site.Params.postalCode }}{{ $postalAddress = merge $postalAddress (dict "postalCode" .) }}{{ end -}}
+  {{- $business = merge $business (dict "address" $postalAddress) -}}
+{{- end -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@graph" (slice
+    (dict
+      "@type" "WebSite"
+      "@id" (printf "%s#website" site.BaseURL)
+      "url" site.BaseURL
+      "name" site.Params.brand
+      "inLanguage" "pl-PL"
+      "description" site.Params.description)
+    (dict
+      "@type" "Person"
+      "@id" (printf "%s#magdalena-gres" site.BaseURL)
+      "name" site.Params.owner
+      "url" site.BaseURL
+      "image" $personPhoto.Permalink
+      "jobTitle" (slice "Dogoterapeutka" "Arteterapeutka" "Psia behawiorystka" "Trenerka psów")
+      "knowsAbout" (slice "dogoterapia" "arteterapia" "behawiorystyka psów" "trening psów"))
+    $business)
+-}}
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{ end }}

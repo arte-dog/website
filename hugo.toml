@@ -1,0 +1,56 @@
+baseURL = "https://arte.dog/"
+locale = "pl-PL"
+defaultContentLanguage = "pl"
+title = "Dogoterapia i behawiorystyka psów Białystok | arte.dog"
+theme = "artedog"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  brand = "arte.dog"
+  owner = "Magdalena Greś"
+  description = "Magdalena Greś — dogoterapia, arteterapia, behawiorystyka i trening psów w Białymstoku. Uważne wsparcie człowieka i psa, bez presji."
+  email = "magda@arte.dog"
+  # Uzupełnij prawdziwe dane. Puste wartości nie są wyświetlane.
+  phone = "+48 732 870 286"
+  locality = "Białystok"
+  address = ""
+  postalCode = ""
+  serviceArea = "Białystok i okolice"
+  themeColor = "#173F39"
+  ogImage = "/images/og-arte-dog-bialystok.png"
+
+[menus]
+  [[menus.main]]
+    name = "O mnie"
+    url = "/#o-mnie"
+    weight = 10
+  [[menus.main]]
+    name = "Obszary pracy"
+    url = "/#obszary"
+    weight = 20
+  [[menus.main]]
+    name = "Podejście"
+    url = "/#podejscie"
+    weight = 30
+  [[menus.main]]
+    name = "Kontakt"
+    url = "/#kontakt"
+    weight = 40
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[minify]
+  minifyOutput = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

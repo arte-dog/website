@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ $page := . }}
+<article class="qualifications-page">
+  <header class="qualifications-hero">
+    <div class="qualifications-wash" aria-hidden="true"></div>
+    <div class="shell qualifications-hero-grid">
+      <div>
+        <p class="eyebrow">O mnie · kompetencje</p>
+        <h1>{{ .Title }}</h1>
+        <p class="qualifications-lead">Wiedza daje kierunek. Uważność pomaga dopasować go do konkretnego człowieka i psa.</p>
+      </div>
+      <div class="qualifications-mark" aria-hidden="true">
+        <span>praktyka</span>
+        <span>rozwój</span>
+        <span>odpowiedzialność</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell qualifications-body">
+    <div class="qualifications-intro prose">{{ .Content }}</div>
+
+    {{ $qualifications := .Params.qualifications }}
+    {{ $mainQualifications := where $qualifications "group" "main" }}
+    {{ $supplementaryQualifications := where $qualifications "group" "supplementary" }}
+
+    {{ with $mainQualifications }}
+      <section class="qualification-group" id="glowne-kwalifikacje" aria-labelledby="main-qualifications-title">
+        <header class="qualification-group-heading">
+          <p class="eyebrow">Fundament praktyki</p>
+          <h2 id="main-qualifications-title">Główne kwalifikacje</h2>
+          <p>Kwalifikacje zawodowe bezpośrednio związane z dogoterapią oraz pracą behawioralną ze zwierzętami.</p>
+        </header>
+        {{ partial "qualification-list.html" (dict "page" $page "items" . "label" "Główne kwalifikacje") }}
+      </section>
+    {{ end }}
+
+    {{ with $supplementaryQualifications }}
+      <section class="qualification-group qualification-group--supplementary" id="szkolenia-uzupelniajace" aria-labelledby="supplementary-qualifications-title">
+        <header class="qualification-group-heading">
+          <p class="eyebrow">Rozszerzanie warsztatu</p>
+          <h2 id="supplementary-qualifications-title">Szkolenia uzupełniające</h2>
+          <p>Szkolenia poszerzające warsztat o komunikację, dobrostan, pracę z ciałem i żywienie.</p>
+        </header>
+        {{ partial "qualification-list.html" (dict "page" $page "items" . "label" "Szkolenia uzupełniające") }}
+      </section>
+    {{ end }}
+
+    <aside class="qualification-note">
+      <span aria-hidden="true">✦</span>
+      <p><strong>Uczenie się nie kończy się wraz z certyfikatem.</strong> Równie ważne pozostają praktyka, obserwacja, superwizja i gotowość do aktualizowania wiedzy.</p>
+    </aside>
+
+    <a class="text-link qualifications-back" href="{{ site.Home.RelPermalink }}#o-mnie">← Wróć do strony głównej</a>
+  </div>
+</article>
+{{ end }}
