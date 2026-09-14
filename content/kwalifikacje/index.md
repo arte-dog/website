@@ -24,7 +24,7 @@ qualifications:
 
   - category: "Behawiorystyka"
     group: "main"
-    title: "Zoopsycholog / Behawiorysta PAZiA — specjalizacja psy"
+    title: "Zoopsycholog / Behawiorysta PAZiA - specjalizacja psy"
     issuer: "Polska Akademia Zoopsychologii i Animaloterapii oraz Polska Akademia Trenerów i Instruktorów Sportu Green Way"
     date: "czerwiec 2023"
     description: "Certyfikat potwierdzający kwalifikacje zawodowe zoopsychologa i behawiorysty (specjalizacja psy)."
@@ -35,7 +35,7 @@ qualifications:
 
   - category: "Behawiorystyka"
     group: "main"
-    title: "Zoopsycholog / Behawiorysta PAZiA — specjalizacja koty"
+    title: "Zoopsycholog / Behawiorysta PAZiA - specjalizacja koty"
     issuer: "Polska Akademia Zoopsychologii i Animaloterapii oraz Polska Akademia Trenerów i Instruktorów Sportu Green Way"
     date: "lipiec 2024"
     description: "Certyfikat potwierdzający kwalifikacje zawodowe zoopsychologa i behawiorysty (specjalizacja koty)."
@@ -137,4 +137,4 @@ qualifications:
 
 Pracuję na styku relacji człowieka i psa, procesu twórczego oraz uważnego wspierania emocji. Dlatego rozwój traktuję nie jako zamknięty etap, lecz jako stałą część odpowiedzialnej praktyki.
 
-Na tej stronie publikuję ukończone szkolenia i certyfikaty związane z obszarami, z których korzystam w swojej pracy. Pokazuję je w prosty sposób — z nazwą programu, organizatorem i datą — tak, aby informacje były konkretne i możliwe do zweryfikowania.
+Na tej stronie publikuję ukończone szkolenia i certyfikaty związane z obszarami, z których korzystam w swojej pracy. Pokazuję je w prosty sposób - z nazwą programu, organizatorem i datą - tak, aby informacje były konkretne i możliwe do zweryfikowania.
