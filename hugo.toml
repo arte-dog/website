@@ -1,7 +1,7 @@
 baseURL = "https://arte.dog/"
 locale = "pl-PL"
 defaultContentLanguage = "pl"
-title = "Dogoterapia i behawiorystyka psów Białystok | arte.dog"
+title = "Dogoterapia z arteterapią Białystok"
 theme = "artedog"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
