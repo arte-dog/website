@@ -17,4 +17,5 @@
   height="{{ $large.Height }}"
   alt="{{ .alt }}"
   decoding="async"
-  {{ with .loading }}loading="{{ . }}"{{ end }}>
+  {{ with .loading }}loading="{{ . }}"{{ end }}
+  {{ with .fetchpriority }}fetchpriority="{{ . }}"{{ end }}>

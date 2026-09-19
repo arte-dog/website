@@ -10,7 +10,10 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="{{ site.Params.themeColor }}">
 <link rel="canonical" href="{{ $canonical }}">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="48x48">
 <link rel="icon" href="{{ "images/favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="icon" href="{{ "images/favicon-96x96.png" | relURL }}" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
 <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
